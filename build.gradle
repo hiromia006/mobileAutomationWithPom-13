@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.36.0'
+
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    implementation 'io.appium:java-client:10.0.0'
+
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation 'org.testng:testng:7.11.0'
+
+    // extent reports
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    testImplementation 'com.aventstack:extentreports:5.1.1'
+
+    // FileUtils.copyFile [screenShot]
+    testImplementation 'commons-io:commons-io:2.11.0'
+
+    // video recording dependencies
+    testImplementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
+}
+
+test {
+    useTestNG()
+}
